@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steven Lambrinos - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <button class="closebtn" onclick="toggleSidebar()">×</button>
+        <h2>Menu</h2>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <div class="mode-toggle">
+            <label for="dark-mode-switch">Dark Mode:</label>
+            <input type="checkbox" id="dark-mode-switch" onchange="toggleMode()" />
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div id="main">
+        <button class="openbtn" onclick="toggleSidebar()">☰ Open Menu</button>
+
+        <header>
+            <h1>Steven Lambrinos</h1>
+            <p>IT Support | Networking | Cybersecurity Enthusiast</p>
+        </header>
+
+        <main>
+            <!-- About Section -->
+            <section id="about">
+                <h2>About Me</h2>
+                <p>Hi, I'm Steven Lambrinos, an aspiring Network and Security Specialist with a passion for problem-solving, cybersecurity, and networking.</p>
+                <p>I recently graduated from Humber College with an Advanced Diploma in Computer Engineering and have hands-on experience troubleshooting IT issues, configuring networks, and managing security vulnerabilities.</p>
+                <p>Currently, I'm working toward earning my CompTIA A+, Network+, and Security+ certifications to further enhance my technical skills. My experience includes building and deploying a smart parking lot system, performing network security analysis, and working with firewalls, ticketing systems, and dynamic routing protocols.</p>
+                <p>I thrive in fast-paced environments where I can help businesses optimize their IT infrastructure, resolve technical issues, and enhance security measures. My goal is to transition into cybersecurity, where I can contribute to securing networks and protecting critical data.</p>
+                <p>Outside of tech, I believe in maintaining a healthy work-life balance. I'm not just a robot sitting at my computer all day—spending time with my family and friends is just as important to me. At the end of the day, no one is here forever, so I make sure to cherish every moment with the people I love. It's easy to get caught up in work, but taking time for the things that truly matter is just as important.</p>
+                <p>I also have a passion for cars. I love working on my fleet of cars at home with my dad—though, let's be real, it's mostly me getting yelled at for holding the flashlight in the wrong spot! But at the end of the day, it's time spent together, and that's what matters. I enjoy the hands-on problem-solving that comes with it, just like in IT.</p>
+                <p>Feel free to explore my projects and experience, and if you'd like to connect, you can find my resume and contact information below. Don't Spam Me.</p>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>IT Support (Hardware and Software Troubleshooting)</li>
+                    <li>Networking (Cisco, Firewalls, Routing and Switching)</li>
+                    <li>Cybersecurity (Vulnerability Analysis, Security Enhancements)</li>
+                    <li>Programming (C, C++, Java, HTML, CSS, Scripting)</li>
+                    <li>Operating Systems (Windows, Linux, MacOS)</li>
+                </ul>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="project">
+                    <h3>Smart Parking Lot System</h3>
+                    <p><strong>Problem:</strong> Excessive traffic and cars on the road.</p>
+                    <p><strong>Solution:</strong> Developed a smart parking system using sensors and an Android app.</p>
+                    <p><strong>Technologies Used:</strong> Android Studio, Arduino, Git/GitHub, PCB Soldering, Python3.</p>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <p>Email: <a href="mailto:Slambrinos02@gmail.com">Slambrinos02@gmail.com</a></p>
+                <p><a href="https://www.linkedin.com/in/stevenlambrinos/" target="_blank">LinkedIn</a> | 
+                   <a href="https://github.com/StevenLambrinos9063" target="_blank">GitHub</a></p>
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+
+            <!-- Daily IT Tip Section -->
+            <section id="daily-tip">
+                <h2>Daily IT Tip</h2>
+                <p id="tip-text">Loading...</p>
+                <button id="new-tip">Next Tip</button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

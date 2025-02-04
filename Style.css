@@ -1,0 +1,213 @@
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Basic styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 3em 0;
+    background-color: #1D3557;
+    color: white;
+    font-weight: 600;
+}
+
+#main {
+    margin-left: 0;
+    padding: 20px;
+}
+
+section {
+    margin: 40px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 12px 0;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 18px;
+    background-color: #1D3557;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #457b9d;
+}
+
+a {
+    color: #1D3557;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar styling */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #2A4D69;
+    overflow-x: hidden;
+    transition: 0.3s ease-in-out;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #b0b0b0;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: white;
+    background-color: #457b9d;
+}
+
+.sidebar .mode-toggle {
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.sidebar .mode-toggle input {
+    margin-right: 10px;
+}
+
+/* Dark mode styling */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode header {
+    background-color: #333;
+}
+
+.dark-mode .sidebar {
+    background-color: #1F2A44;
+}
+
+.dark-mode .sidebar a {
+    color: #b0b0b0;
+}
+
+.dark-mode button {
+    background-color: #457b9d;
+}
+
+.dark-mode .openbtn {
+    background-color: #1F2A44;
+}
+
+.dark-mode .read-more {
+    color: #a8dadc;
+}
+
+/* About Me expand on hover */
+.expandable-text {
+    display: block;
+    max-height: 5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.expandable-text .more-text {
+    display: none;
+}
+
+.expandable-text.expand .more-text {
+    display: inline;
+    white-space: normal;
+}
+
+/* Open Menu Button */
+.openbtn {
+    font-size: 22px;
+    cursor: pointer;
+    background-color: #2A4D69;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.openbtn:hover {
+    background-color: #1D3557;
+}
+
+/* Light/Dark Mode Toggle Switch */
+.mode-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mode-toggle input {
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mode-toggle input:checked {
+    background-color: #457b9d;
+}
+
+.mode-toggle input:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.mode-toggle input:checked:before {
+    transform: translateX(20px);
+}
+
+.read-more {
+    color: #1D3557;
+    cursor: pointer;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
