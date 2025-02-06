@@ -1,39 +1,35 @@
-// Toggle sidebar visibility
+// Toggle Sidebar
 function toggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    if (sidebar.style.width === "250px") {
-        sidebar.style.width = "0";
-    } else {
-        sidebar.style.width = "250px";
-    }
+    var sidebar = document.querySelector(".sidebar");
+    var body = document.body;
+    sidebar.classList.toggle("open");
+    body.classList.toggle("sidebar-open"); // Ensure this shifts the content when sidebar is open
 }
 
-// Toggle light/dark mode
-const darkModeSwitch = document.getElementById("dark-mode-switch");
-
-darkModeSwitch.addEventListener('change', function() {
-    const body = document.body;
-    body.classList.toggle('dark-mode');
-
-    // Save the mode preference in localStorage
-    if (body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
+// Close Sidebar on Outside Click
+window.onclick = function(event) {
+    var sidebar = document.querySelector(".sidebar");
+    var hamburger = document.querySelector('.hamburger');
+    
+    // Close the sidebar if the user clicks outside of it
+    if (!event.target.matches('.hamburger') && !event.target.closest('.sidebar')) {
+        sidebar.classList.remove("open");
+        document.body.classList.remove("sidebar-open");
     }
+};
+
+// Close Sidebar when clicking on a link inside the sidebar
+document.querySelectorAll('.sidebar a').forEach(item => {
+    item.addEventListener('click', () => {
+        document.querySelector(".sidebar").classList.remove("open");
+        document.body.classList.remove("sidebar-open");
+    });
 });
 
-// Check and set the dark mode on page load based on localStorage
-document.addEventListener("DOMContentLoaded", function() {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark-mode");
-        darkModeSwitch.checked = true;
-    } else {
-        document.body.classList.remove("dark-mode");
-        darkModeSwitch.checked = false;
-    }
-});
+// Toggle Dark Mode
+function toggleMode() {
+    document.body.classList.toggle("dark-mode");
+}
 
 // Daily IT Tip functionality
 const tips = [
@@ -57,27 +53,9 @@ function displayTip() {
 }
 
 document.getElementById("new-tip").addEventListener("click", () => {
-    currentTipIndex = (currentTipIndex + 1) % tips.length; // Cycle through tips
+    currentTipIndex = (currentTipIndex + 1) % tips.length;
     displayTip();
 });
 
 // Initial tip display
 displayTip();
-
-// Sidebar toggle and dark mode functionality for the sidebar
-const sidebar = document.getElementById("sidebar");
-
-// Close sidebar when clicking outside of it
-window.onclick = function(event) {
-    if (!event.target.matches('#open-btn') && !event.target.matches('.sidebar') && !event.target.matches('.sidebar *')) {
-        closeSidebar();
-    }
-};
-
-function closeSidebar() {
-    sidebar.style.width = "0";
-}
-
-function openSidebar() {
-    sidebar.style.width = "250px";
-}
