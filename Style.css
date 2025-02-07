@@ -22,6 +22,11 @@ body {
     background: #121212;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+  
+
 /* Center Landing Page Content */
 #landing {
     display: flex;
@@ -95,62 +100,222 @@ body {
     padding: 0;
     margin: 0;
     display: flex; 
+    gap: 15px;  /* Adjust spacing between items */
   }
   
-  
+  .nav-menu li a {
+    display: inline-block;       /* Allows for padding and transform effects */
+    text-decoration: none;
+    color: #fff;                 /* Adjust text color to your preference */
+    padding: 8px 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
   .navbar li {
     margin-left: 20px; 
   }
   
-  
+/* Style for the navbar links */
+.navbar ul li a {
+    display: inline-block;       /* Allows for padding and transform effects */
+    text-decoration: none;
+    color: #fff;                 /* Adjust text color to your preference */
+    font-size: 25px; 
+    padding: 8px 12px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for navbar links */
+.navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background highlight */
+    transform: translateY(-3px);                /* Moves the link up a bit */
+    border-radius: 4px;                         /* Optional: softens the highlight's edges */
+}
+
   .navbar a {
     text-decoration: none; 
     color: #ffffff; 
-    font-size: 20px; 
+    font-size: 25px; 
   }
+
   
+  
+/* ---------- About Me Section (Full Width) ---------- */
 .about-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    max-width: 1200px;
-    padding: 20px;
-    gap: 20px;
+    background: #f8f9fa; /* Soft background color */
+    width: 100vw; /* Full width */
+    padding: 80px 5%; /* Better spacing */
     text-align: center;
-    position: relative; /* Ensures child elements respect layout */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-in-out forwards;
 }
 
-
+/* Image Styling */
 .about-container img {
-    width: 150px;
+    width: 250px;
     height: auto;
-    border-radius: 1%;
+    border-radius: 10px;
     object-fit: cover;
     flex-shrink: 0;
     position: relative;
-    z-index: 1; /* Keeps it behind the text */
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 1.5s ease-out forwards 0.3s;
 }
 
+/* Text Styling */
 .about-text {
     flex: 1;
-    min-width: 250px;
-    overflow: visible;
+    min-width: 300px;
+    font-size: 18px;
+    color: #333;
     position: relative;
-    z-index: 2; /* Ensure text is above the image */
+    font-weight: 500;
+    padding: 20px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideInRight 1.5s ease-out forwards 0.5s;
 }
 
+/* ---------- Skills Section (Full Width & Attached) ---------- */
+.skills-wrapper {
+    position: relative;
+    width: 100vw; /* Full width */
+    overflow: hidden;
+    padding: 50px 0;
+    background: #f8f9fa; /* Match About Me background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-in-out forwards 1s;
+}
 
-    @media (max-width: 768px) {
-        .about-container {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .about-text, .about-container img {
-            width: 100%;
-        }
+/* Scrolling Skills */
+.skills-content {
+    display: flex;
+    gap: 40px;
+    white-space: nowrap;
+    animation: scrollSkills 15s linear infinite;
+    width: max-content;
+}
+
+/* Individual Skill Box */
+.skill {
+    background: #333;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    opacity: 0;
+    animation: fadeSkills 1.5s ease-in-out forwards;
+}
+
+/* ---------- Animations ---------- */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
     }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollSkills {
+    from {
+        transform: translateX(50%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes fadeSkills {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Adjusted Fade Effect (Closer to Center) ---------- */
+.skills-wrapper::before,
+.skills-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 30%;  /* Moves fade closer to the center */
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.skills-wrapper::before {
+    left: 10%;
+    background: linear-gradient(to right, rgba(248, 249, 250, 1), rgba(248, 249, 250, 0));
+}
+
+.skills-wrapper::after {
+    right: 10%;
+    background: linear-gradient(to left, rgba(248, 249, 250, 1), rgba(248, 249, 250, 0));
+}
+
+/* ---------- Responsive Fixes ---------- */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 5%;
+    }
+
+    .about-text, .about-container img {
+        width: 100%;
+    }
+
+    .skills-wrapper {
+        padding: 30px 0;
+    }
+
+    .skills-wrapper::before,
+    .skills-wrapper::after {
+        width: 40%; /* Adjust fade for smaller screens */
+    }
+}
+
 
 /* Scrolling Skills */
 .skills-container {
