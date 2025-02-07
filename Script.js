@@ -3,24 +3,23 @@ function toggleSidebar() {
     var sidebar = document.querySelector(".sidebar");
     var body = document.body;
     sidebar.classList.toggle("open");
-    body.classList.toggle("sidebar-open"); // Ensure this shifts the content when sidebar is open
+    body.classList.toggle("sidebar-open");
 }
 
 // Close Sidebar on Outside Click
-window.onclick = function(event) {
+document.addEventListener("click", function(event) {
     var sidebar = document.querySelector(".sidebar");
-    var hamburger = document.querySelector('.hamburger');
+    var hamburger = document.querySelector(".hamburger");
     
-    // Close the sidebar if the user clicks outside of it
-    if (!event.target.matches('.hamburger') && !event.target.closest('.sidebar')) {
+    if (!event.target.closest(".hamburger") && !event.target.closest(".sidebar")) {
         sidebar.classList.remove("open");
         document.body.classList.remove("sidebar-open");
     }
-};
+});
 
 // Close Sidebar when clicking on a link inside the sidebar
-document.querySelectorAll('.sidebar a').forEach(item => {
-    item.addEventListener('click', () => {
+document.querySelectorAll(".sidebar a").forEach(item => {
+    item.addEventListener("click", () => {
         document.querySelector(".sidebar").classList.remove("open");
         document.body.classList.remove("sidebar-open");
     });
@@ -29,7 +28,16 @@ document.querySelectorAll('.sidebar a').forEach(item => {
 // Toggle Dark Mode
 function toggleMode() {
     document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
 }
+
+// Load dark mode preference from local storage
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+    }
+    displayTip();
+});
 
 // Daily IT Tip functionality
 const tips = [
@@ -45,11 +53,13 @@ const tips = [
     "Learn basic command line tools to troubleshoot faster."
 ];
 
-let currentTipIndex = 0;
+let currentTipIndex = Math.floor(Math.random() * tips.length);
 
 function displayTip() {
     const tipText = document.getElementById("tip-text");
-    tipText.textContent = tips[currentTipIndex];
+    if (tipText) {
+        tipText.textContent = tips[currentTipIndex];
+    }
 }
 
 document.getElementById("new-tip").addEventListener("click", () => {
@@ -57,5 +67,20 @@ document.getElementById("new-tip").addEventListener("click", () => {
     displayTip();
 });
 
-// Initial tip display
-displayTip();
+
+// Particles.js animation
+particlesJS("particles-js", {
+    particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: false },
+        size: { value: 3, random: true },
+        move: { speed: 3, direction: "none", out_mode: "out" }
+    },
+    interactivity: {
+        detect_on: "canvas",
+        events: { onhover: { enable: true, mode: "repulse" } },
+        modes: { repulse: { distance: 100 } }
+    }
+});

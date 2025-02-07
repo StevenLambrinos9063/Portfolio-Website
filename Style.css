@@ -3,42 +3,112 @@ body {
     font-family: "Trebuchet MS", sans-serif;
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s ease;
-    background-color: #ffffff;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-header {
+/* Background Animation */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: #121212;
+}
+
+/* Center Landing Page Content */
+#landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Makes it take full viewport height */
     text-align: center;
-    padding: 2em 0;
-    background-color: #89CFF0;
-    color: white;
 }
 
-#main {
-    padding: 20px;
+/* Style for Name */
+.landing-content h1 {
+    font-size: 4rem; /* Makes your name larger */
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-section {
-    margin: 30px 0;
+/* Subtitle (Optional: Adjust as Needed) */
+.landing-content p {
+    font-size: 1.5rem;
+    color: #aaa; /* Adjust color for better contrast */
+    margin-bottom: 20px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-button {
-    padding: 10px 15px;
-    background-color: #89CFF0;
-    color: white;
+/* Smooth Animation for View My Work Button */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2rem;
     border: none;
+    background-color: #89CFF0; /* Adjust color */
+    color: white;
+    border-radius: 8px;
     cursor: pointer;
+    transition: all 0.4s ease-in-out; /* Smooth transition */
+    text-decoration: none;
 }
 
-button:hover {
+.btn:hover {
+    background-color: #007bff;
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+
+.cta-buttons a {
+    padding: 12px 20px;
     background-color: #89CFF0;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
+.cta-buttons a:hover {
+    background-color: #5aaedc;
+}
+
+/* Style for the navbar container */
+.navbar {
+    display: flex;
+    justify-content: flex-end; 
+    position: absolute;
+    top: 0;
+    right: 0; 
+    margin: 20px;
+  }
+  
+  /* Style for the navbar list */
+  .navbar ul {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+    display: flex; 
+  }
+  
+  
+  .navbar li {
+    margin-left: 20px; 
+  }
+  
+  
+  .navbar a {
+    text-decoration: none; 
+    color: #ffffff; 
+    font-size: 20px; 
+  }
+  
 .about-container {
     display: flex;
     flex-wrap: wrap;
@@ -81,237 +151,156 @@ button:hover {
             width: 100%;
         }
     }
-    
 
-/* Sidebar Styles */
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333; /* Dark sidebar background */
-    overflow-x: hidden;
-    transition: width 0.3s ease, opacity 0.3s ease;
-    padding-top: 60px;
-    opacity: 0;
-    color: white; /* Ensure text is white */
-    z-index: 1000; /* Ensure it's above other content */
-}
-
-.sidebar.open {
-    width: 250px;
-    opacity: 1;
-}
-
-.sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: white; /* Ensure links are white */
-    display: block;
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    background-color: #3d3d3d; /* Slightly lighter background on hover */
-}
-
-/* Hamburger Button */
-.hamburger {
-    font-size: 30px;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 2000; /* Ensure it's on top of sidebar */
-}
-
-/* Dark Mode */
-.dark-mode {
-    background-color: #121212;
-    color: white;
-}
-
-.dark-mode header {
-    background-color: #333;
-}
-
-nav {
-    background-color: #1a1a1a; /* Dark background */
-    padding: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items */
-}
-
-nav ul li {
+/* Scrolling Skills */
+.skills-container {
     width: 100%;
-    text-align: center;
-    padding: 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ffffff; /* White text */
-    font-size: 18px;
-    display: block;
-    padding: 10px;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #333; /* Darker hover effect */
-}
-
-body {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    background: #1a1a1a;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    transition: margin-left 0.3s ease;
+    align-items: center;
+    justify-content: center;
 }
 
-body.sidebar-open {
-    margin-left: 250px; /* When the sidebar opens, adjust the body content */
+.skills-scroll {
+    display: flex;
+    gap: 40px;
+    animation: scroll 15s linear infinite;
 }
 
-#content {
-    transition: margin-left 0; /* just to make sure that nothing is behind the bar */
+.skills-scroll span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #89CFF0;
 }
 
-#projects {
-    padding: 20px;
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Projects Section */
+.projects {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
 }
 
 .project-container {
-    display: flex; /* Use flexbox to display projects side by side */
-    flex-wrap: wrap; /* Allow projects to wrap to the next row if needed */
-    gap: 30px; /* Space between projects */
-    justify-content: center; /* Center the projects in the section */
+    display: flex; /* Align items in a row */
+    justify-content: space-between; /* Space items evenly */
+    gap: 20px; /* Small space between items */
 }
-
 
 .project {
-    width: 100%; /* Ensure each project takes full width of the container */
-    max-width: calc(33.33% - 20px); /* Allow for 3 projects per row, accounting for gap */
+    width: 300px; /* Fixed width for each project */
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    box-sizing: border-box; /* Include padding and borders in width calculation */
+    transition: transform 0.3s;
 }
 
-.logo {
-    width: 100%; /* Make the logo take up the full width of the project container */
-    max-width: 200px; /* Set a maximum size for the image */
-    height: auto; /* Maintain the aspect ratio */
-    margin: 0 auto; /* Center the image */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Optional shadow */
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project img {
+    width: 100%; /* Ensure image fits within the project box */
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 .project h3 {
-    font-size: 1.5rem; /* Adjust project title size */
-    margin-top: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
-.project p {
-    font-size: 1rem; /* Adjust paragraph text size */
-    line-height: 1.5;
+.tip-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically (if needed) */
+    margin-top: 20px; /* Adjust spacing if necessary */
 }
 
-.logo {
-    width: 100%; /* Make the logo take up the full width of the project container */
-    max-width: 200px; /* Set a maximum size for the image */
-    height: auto; /* Maintain the aspect ratio */
-    margin: 0 auto; /* Center the image */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Optional shadow */
-
+.tip-container {
+    text-align: center; /* Centers inline elements like buttons */
+    margin-top: 20px;
 }
 
-/* Body settings to make sure the content doesn't overlap the footer */
-body {
-    margin: 0; /* Remove default margin */
-    padding-bottom: 60px; /* Adjust this value based on your footer's height */
-    min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    align-items: center;
 }
 
-
-/* Footer styles */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+input, textarea {
     width: 100%;
-    background-color: #3d3d3d; /* Dark, sleek footer */
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+button {
+    background-color: #89CFF0;
     color: white;
-    padding: 10px 0;
-    font-size: 14px;
+    font-size: 1.2rem;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #5aaedc;
+}
+
+/* Social Icons */
+.social-links {
+    margin-top: 30px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    box-shadow: 0 -2px 5px rgba(247, 247, 247, 0.2); /* Soft shadow effect */
-    z-index: 1000;
-}
-
-/* Footer container for content alignment */
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 90%;
-    max-width: 1200px;
-}
-
-/* Footer links section */
-.footer-links {
-    display: flex;
     gap: 20px;
-    margin-bottom: 5px;
 }
 
-/* Footer links */
-.footer-links a {
-    color: #89CFF0; /* Soft blue like Scotiabank’s clean UI */
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #ffffff; /* Smooth hover effect */
-}
-
-/* Footer text */
-.footer-text {
-    font-size: 12px;
-    color: #bbbbbb;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensures full-page height */
-    margin: 0;
-}
-
-#main {
-    flex: 1; /* Pushes the footer down */
-}
-
-footer {
-    background-color: #3d3d3d;
+.social-links a {
+    font-size: 2rem;
     color: white;
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
-    position: relative; /* Not fixed */
+    transition: color 0.3s;
 }
 
+.social-links a:hover {
+    color: #89CFF0;
+}
