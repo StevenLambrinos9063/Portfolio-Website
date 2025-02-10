@@ -38,9 +38,10 @@ document.getElementById("new-tip").addEventListener("click", () => {
 
 
 // Particles.js animation
+
 particlesJS("particles-js", {
     particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
+        number: { value: 100, density: { enable: true, value_area: 800 } },
         color: { value: "#ffffff" },
         shape: { type: "circle" },
         opacity: { value: 0.5, random: false },
@@ -50,6 +51,6 @@ particlesJS("particles-js", {
     interactivity: {
         detect_on: "canvas",
         events: { onhover: { enable: true, mode: "repulse" } },
-        modes: { repulse: { distance: 100 } }
+        modes: { repulse: { distance: 60 } }  // Corrected the distance value
     }
 });
