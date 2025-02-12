@@ -36,6 +36,27 @@ document.getElementById("new-tip").addEventListener("click", () => {
     displayTip();
 });
 
+const skills = document.querySelectorAll("skills");
+
+if (!window.matchMedia("(prefers-reduced-motion: reduce)" ).matches) {
+    addAnimation();
+}
+
+function addAnimation() {
+    skills.forEach((skillSection) => {
+        skillSection.setAttribute ("data-animated", true);
+
+    const skillsScroller = skillSection.querySelectorAll('.skills-scroller')
+    const skillsContent = skillSection.querySelectorAll('.skills-content')
+    const skillItems = Array.from(skillsContent.children);
+
+    skillItems.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        duplicatedItem.setAttribute("aria-hidden", true);
+        skillsContent.appendChild(duplicatedItem);
+    })
+    });
+ } 
 
 // Particles.js animation
 

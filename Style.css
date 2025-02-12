@@ -183,6 +183,8 @@ html {
     margin-right: 40px;
 }
 
+
+
 /* About Text - Smaller & Centered */
 .about-text {
     flex: 1;
@@ -195,100 +197,49 @@ html {
     text-align: left;
 }
 
-/* ---------- Skills Section (Perfect Loop & Fade Effect Adjusted) ---------- */
-.skills-wrapper {
-    position: relative;
-    width: 100vw;
-    overflow: hidden;
-    padding: 40px 0;
-    background: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Scrolling Skills - Slower */
-.skills-content {
-    display: flex;
-    gap: 40px;
-    white-space: nowrap;
-    animation: scrollSkills 60s linear infinite; /* Slowed down */
-    width: max-content;
-    justify-content: center;
-}
-
-/* Individual Skill Box */
+/* Skill Styles */
 .skill {
-    background: #333;
+    background: #222;
     color: #fff;
-    padding: 10px 22px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    border-radius: 6px;
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: bold;
     display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* ---------- Smooth Scrolling Animation ---------- */
+.skills-content {
+    width: max-content;
+    margin: 0;
+    padding-inline: 0;
+    list-style: none;
+    padding-block: 1rem;
+    display: flex;
+    gap: 1rem;
+    white-space: nowrap;
+    animation: scrollSkills 30s linear infinite;
+}
+
+.skills-scroller {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.skills-scroller[data-animated="true"] {
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%);
+}
+
+/* Infinite scroll animation */
 @keyframes scrollSkills {
-    from {
-        transform: translateX(100%);
-    }
     to {
-        transform: translateX(-100%);
+        transform: translateX(calc(-50% - 0.5rem)); /* Adjust to keep it smooth */
     }
 }
 
-/* ---------- Wider Fade Effect  ---------- */
-.skills-wrapper::before,
-.skills-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 50%; /* Fade effect takes up 20% of the screen */
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.skills-wrapper::before {
-    left: 0%; /* Moves fade farther out */
-    background: linear-gradient(to right, rgba(248, 249, 250, 1), rgba(248, 249, 250, 0) 50%);
-}
-
-.skills-wrapper::after {
-    right: 0%; /* Moves fade farther out */
-    background: linear-gradient(to left, rgba(248, 249, 250, 1), rgba(248, 249, 250, 0) 50%);
-}
-
-/* ---------- Responsive Fixes ---------- */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 50px 5%;
-    }
-
-    .about-container img {
-        width: 70%;
-        margin-bottom: 20px;
-    }
-
-    .about-text {
-        width: 90%;
-        max-width: 100%;
-        font-size: 18px;
-    }
-
-    .about-text {
-        text-align: center; /* Adjusts text alignment for mobile */
-    }
-
-    .skills-wrapper::before,
-    .skills-wrapper::after {
-        width: 25vw; /* Adjust fade for smaller screens */
-    }
-}
 
 
 /* Projects Section */
