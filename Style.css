@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: "Trebuchet MS", sans-serif !important;
     margin: 0;
     padding: 0;
     background-color: #121212;
@@ -141,6 +141,27 @@ html {
     font-size: 25px; 
   }
 
+/* ---------- SL. Signature (Independent from Navbar) ---------- */
+.signature {
+    font-size: 30px;  /* Match navbar font size */
+    font-weight: normal; /* Match navbar text weight */
+    font-family: inherit; /* Use same font as navbar */
+    color: #fff;  /* Match navbar text color */
+    
+    position: absolute;
+    top: 20px;  /* Align with navbar */
+    left: 30px; /* Keep it in the corner */
+    
+    text-decoration: none; /* Remove underlines */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect (Same as Navbar Links) */
+.signature:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light highlight */
+    transform: translateY(-3px); /* Moves up slightly */
+    border-radius: 4px; /* Soft edges */
+}
   
   
 /* ---------- About Me Section (Balanced Size & Centered) ---------- */
@@ -158,16 +179,16 @@ html {
     margin:auto;
 }
 
-/* "About Me" Heading - Centered Above Text */
+/* Center the "About Me" heading */
 .about-heading {
     font-size: 2.5rem;
     font-weight: 600;
     text-align: center;
-    margin-bottom: 30px;
     color: #333;
     border-bottom: 3px solid #4A90E2;
     display: inline-block;
     padding-bottom: 5px;
+    margin-bottom: 30px;
 }
 
 
@@ -196,6 +217,8 @@ html {
     z-index: 2;
     text-align: left;
 }
+
+
 
 /* Skill Styles */
 .skill {
