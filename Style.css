@@ -3,19 +3,33 @@ body {
     font-family: "Trebuchet MS", sans-serif !important;
     margin: 0;
     padding: 0;
-    background-color: #121212;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-body {
     overflow-x: hidden; /* Ensures nothing extends past the viewport */
+    background: #121212; /* Default background for landing page */
+    transition: background 1s ease-in-out; /* Smooth transition effect */
 }
 
-/* Background Animation */
+/* Enable Smooth Scrolling for All Page Navigation */
+html {
+    scroll-behavior: smooth; /* Ensures smooth scroll effect for all links */
+} 
+
+/* Default background (Landing Page Effect) */
+body {
+    background: #121212; /* Dark background for the landing page */
+    transition: background 1s ease-in-out; /* Smooth transition effect */
+}
+
+/* Background transition AFTER scrolling past the landing page */
+.scrolled {
+    background: linear-gradient(to bottom, #000, #333) !important; /* Black to Gray */
+}
+
+/* Landing Page Background Animation (Particles Running) */
 #particles-js {
     position: fixed;
     top: 0;
@@ -24,12 +38,10 @@ body {
     height: 100vh;
     z-index: -1;
     background: #121212;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-in-out, visibility 0s 0s; /* Smooth transition */
 }
-
-html {
-    scroll-behavior: smooth;
-  }
-  
 
 /* Center Landing Page Content */
 #landing {
@@ -69,7 +81,7 @@ html {
 }
 
 .btn:hover {
-    background-color: #007bff;
+    background-color: #89CFF0;
     transform: scale(1.1); /* Slight zoom effect */
 }
 
@@ -85,116 +97,89 @@ html {
 }
 
 .cta-buttons a:hover {
-    background-color: #5aaedc;
+    background-color: #89CFF0;
 }
 
-/* Style for the navbar container */
+/* ---------- NAVBAR STYLING ---------- */
 .navbar {
     display: flex;
-    justify-content: flex-end; 
+    align-items: center;  /* Align navbar items vertically */
+    justify-content: flex-end;  /* Keep links on the right */
     position: absolute;
     top: 0;
     right: 0; 
-    margin: 20px;
-  }
-  
-  /* Style for the navbar list */
-  .navbar ul {
-    list-style-type: none; 
+    margin: 30px;
+}
+
+/* Navbar List */
+.navbar ul {
+    list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex; 
-    gap: 15px;  /* Adjust spacing between items */
-  }
-  
-  .nav-menu li a {
-    display: inline-block;       /* Allows for padding and transform effects */
-    text-decoration: none;
-    color: #fff;                 /* Adjust text color to your preference */
-    padding: 8px 12px;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    display: flex;
+    gap: 15px; /* Adjust spacing between navbar items */
 }
-  .navbar li {
-    margin-left: 20px; 
-  }
-  
-/* Style for the navbar links */
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+/* Navbar Links */
 .navbar ul li a {
-    display: inline-block;       /* Allows for padding and transform effects */
+    display: inline-block;
     text-decoration: none;
-    color: #fff;                 /* Adjust text color to your preference */
-    font-size: 25px; 
+    color: #fff; /* White text color */
+    font-size: 25px;
     padding: 8px 12px;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
-}
-
-/* Hover effect for navbar links */
-.navbar ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Light background highlight */
-    transform: translateY(-3px);                /* Moves the link up a bit */
-    border-radius: 4px;                         /* Optional: softens the highlight's edges */
-}
-
-  .navbar a {
-    text-decoration: none; 
-    color: #ffffff; 
-    font-size: 25px; 
-  }
-
-/* ---------- SL. Signature (Independent from Navbar) ---------- */
-.signature {
-    font-size: 30px;  /* Match navbar font size */
-    font-weight: normal; /* Match navbar text weight */
-    font-family: inherit; /* Use same font as navbar */
-    color: #fff;  /* Match navbar text color */
-    
-    position: absolute;
-    top: 20px;  /* Align with navbar */
-    left: 30px; /* Keep it in the corner */
-    
-    text-decoration: none; /* Remove underlines */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover Effect (Same as Navbar Links) */
+/* Hover Effect for Navbar Links */
+.navbar ul li a:hover {
+    color: #89CFF0; /* Change text color to match SL. signature hover */
+    transform: translateY(-3px); /* Moves the link up slightly */
+    border-radius: 4px; /* Smooth rounded edges */
+}
+
+/* ---------- SL. SIGNATURE (Logo - Using Your Position) ---------- */
+.signature {
+    font-size: 35px; /* Your requested font size */
+    font-weight: normal;
+    font-family: inherit;
+    color: #fff; /* White color */
+    
+    position: absolute;
+    top: 30px; /* Your requested top position */
+    left: 50px; /* Your requested left position */
+
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Matches navbar links */
+}
+
+/* Hover Effect for SL. (Same as Navbar Links) */
 .signature:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Light highlight */
+    color: #89CFF0; /* Change color on hover */
     transform: translateY(-3px); /* Moves up slightly */
-    border-radius: 4px; /* Soft edges */
 }
   
-  
-/* ---------- About Me Section (Balanced Size & Centered) ---------- */
+/* ---------- ABOUT ME SECTION (Original Layout) ---------- */
 .about-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     background: #f8f9fa;
-    width: 90%; /* Full width */
+    width: 90%;
     padding: 80px 5%;
     text-align: center;
     position: relative;
     z-index: 2;
-    margin:auto;
+    margin: auto;
 }
 
-/* Center the "About Me" heading */
-.about-heading {
-    font-size: 2.5rem;
-    font-weight: 600;
-    text-align: center;
-    color: #333;
-    border-bottom: 3px solid #4A90E2;
-    display: inline-block;
-    padding-bottom: 5px;
-    margin-bottom: 30px;
-}
-
-
-/* Image - Closer to Center */
+/* About Me Image */
 .about-container img {
-    width: 260px; /* Smaller */
+    width: 300px;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
@@ -204,23 +189,62 @@ html {
     margin-right: 40px;
 }
 
-
-
-/* About Text - Smaller & Centered */
+/* About Me Text */
 .about-text {
     flex: 1;
-    min-width: 300px;
-    font-size: 20px; /* Adjusted for better balance */
+    max-width: 800px; /* Keeps text from stretching too wide */
+    font-size: 20px;
     color: #333;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.5; /* Improves paragraph readability */
     z-index: 2;
     text-align: left;
+    margin-right: middle; /* Ensures text stays structured next to the image */
 }
 
+/* ---------- INFINITE SCROLLING SKILLS BAR ---------- */
+.skills-scroller {
+    width: 100%;
+    overflow: hidden;
+    background: #f8f9fa; /* Matches About Me */
+    padding: 15px 0;
+    position: relative;
+}
 
+/* Container for the scrolling text */
+.skills-content {
+    display: flex;
+    gap: 20px;
+    white-space: nowrap;
+    animation: scrollSkills 10s linear infinite;
+    width: max-content;
+}
 
-/* Skill Styles */
+.resume-link-container {
+    width: 100%;
+    margin-top: 20px; /* Space between last paragraph and button */
+    display: flex;
+    align-items: flex-start; /* Align button with text */
+}
+
+/* Resume Link */
+.resume-link {
+    padding: 12px 24px;
+    background: #89CFF0;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.resume-link:hover {
+    background: #89CFF0;
+    transform: scale(1.05);
+}
+
+/* Individual Skill Box */
 .skill {
     background: #222;
     color: #fff;
@@ -233,33 +257,13 @@ html {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.skills-content {
-    width: max-content;
-    margin: 0;
-    padding-inline: 0;
-    list-style: none;
-    padding-block: 1rem;
-    display: flex;
-    gap: 1rem;
-    white-space: nowrap;
-    animation: scrollSkills 30s linear infinite;
-}
-
-.skills-scroller {
-    max-width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.skills-scroller[data-animated="true"] {
-    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-    mask: linear-gradient(90deg, transparent, white 20%, white 80%);
-}
-
-/* Infinite scroll animation */
+/* Infinite Scroll Animation */
 @keyframes scrollSkills {
-    to {
-        transform: translateX(calc(-50% - 0.5rem)); /* Adjust to keep it smooth */
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }
 
@@ -306,15 +310,43 @@ html {
     margin-bottom: 10px;
 }
 
-.tip-container {
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically (if needed) */
-    margin-top: 20px; /* Adjust spacing if necessary */
+/* Ensure certifications and daily IT tip are displayed */
+#certifications, #daily-tip {
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
+/* Ensure button is visible */
 .tip-container {
-    text-align: center; /* Centers inline elements like buttons */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Styled button (matches your existing button style) */
+#new-tip {
+    padding: 12px 24px;
+    background: #89CFF0;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+/* Hover effect */
+#new-tip:hover {
+    background: #89CFF0; /* Slightly darker shade on hover */
+    transform: scale(1.05);
+}
+
+/* Center button inside its container */
+.tip-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
 }
 
@@ -326,61 +358,143 @@ html {
     color: white;
 }
 
+/* Contact Heading */
 #contact h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-form {
-    max-width: 600px;
+/* Contact Subtitle */
+#contact p {
+    font-size: 1.2rem;
+    color: #b0b0b0; /* Lighter text color */
+    margin-bottom: 30px;
+}
+
+/* Contact Form Container */
+.contact-container {
+    max-width: 700px;
+    background: #0d0d0d; /* Darker container background */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     margin: auto;
+}
+
+/* Contact Form */
+form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    align-items: center;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-textarea {
-    height: 150px;
-    resize: none;
-}
-
-button {
-    background-color: #89CFF0;
-    color: white;
-    font-size: 1.2rem;
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #5aaedc;
-}
-
-/* Social Icons */
-.social-links {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
-.social-links a {
-    font-size: 2rem;
+/* Input Fields */
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #222; /* Darker input background */
     color: white;
-    transition: color 0.3s;
+    outline: none;
+    transition: all 0.3s ease-in-out;
 }
 
+/* Focus Effect */
+input:focus, textarea:focus {
+    background: #333;
+}
+
+/* Textarea */
+textarea {
+    height: 140px;
+    resize: none;
+}
+
+/* Send Button */
+.send-btn {
+    padding: 12px 24px;
+    background: #89CFF0; /* Button color */
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+}
+
+.send-btn:hover {
+    background: #89CFF0;
+    transform: scale(1.05);
+}
+
+/* Social Media Icons */
+.social-links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Social Icon Styling */
+.social-links a {
+    font-size: 1.8rem;
+    color: white;
+    padding: 12px;
+    background: #222; /* Dark button background */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Social Icons Hover Effect */
 .social-links a:hover {
-    color: #89CFF0;
+    background: #89CFF0;
+    transform: scale(1.1);
+}
+
+/* Input Fields */
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #4A90E2; /* Light blue border to make visible */
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #1c1c1c; /* Slightly lighter background */
+    color: white;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Placeholder Text (Make more visible) */
+input::placeholder, textarea::placeholder {
+    color: #b0b0b0; /* Lighter placeholder color */
+}
+
+/* Focus Effect (Make inputs stand out when typing) */
+input:focus, textarea:focus {
+    background: #262626;
+    border-color: #89CFF0;
+}
+
+
+#contact label {
+    color: #f0f0f0; /* Lighter label color */
+}
+
+.contact-container {
+    max-width: 700px;
+    background: #121212; /* Lighter than the full page background */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Soft white shadow */
+    margin: auto;
 }

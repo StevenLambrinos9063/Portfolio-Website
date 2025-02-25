@@ -36,49 +36,47 @@
 
 
 
-    <!-- About Section -->
-    <section id="about" class="about-container">
+   <!-- About Me Section -->
+<section id="about" class="about-container">
+    <img src="Steven.png" alt="Steven">
+    
+    <div class="about-text">
         <h2 class="about-heading">About Me</h2>
-        <div class="about-content">
-
-    <div class="about-container">
-        <img src="Steven.png" alt="Steven" class="Me">
-        <div class="about-text">
-            <p>I'm an aspiring Network and Security Specialist with a passion for problem-solving, cybersecurity, and networking.</p>
-            <p>I graduated from Humber College with an Advanced Diploma in Computer Engineering and have hands-on experience troubleshooting IT issues, configuring networks, and managing security vulnerabilities.</p>
-            <p>Currently, I'm working toward earning my CompTIA A+, Network+, and Security+ certifications. My experience includes building and deploying a smart parking lot system, performing network security analysis, and working with firewalls, ticketing systems, and dynamic routing protocols.</p>
-            <p>Outside of tech, I value time with my family and friends. I also have a passion for cars, often working on them with my dad—though, let’s be real, it's mostly me getting yelled at for holding the flashlight wrong!</p>
+        <p>I'm an aspiring Network and Security Specialist with a passion for problem-solving, cybersecurity, and networking.</p>
+        <p>I graduated from Humber College with an Advanced Diploma in Computer Engineering and have hands-on experience troubleshooting IT issues, configuring networks, and managing security vulnerabilities.</p>
+        <p>Currently, I'm working toward earning my CompTIA A+, Network+, and Security+ certifications. My experience includes building and deploying a smart parking lot system, performing network security analysis, and working with firewalls, ticketing systems, and dynamic routing protocols.</p>
+        <p>Outside of tech, I value time with my family and friends. I also have a passion for cars, often working on them with my dad—though, let’s be real, it's mostly me getting yelled at for holding the flashlight wrong!</p>
+        
+        <!-- FIXED Resume Button (Now correctly below the last paragraph) -->
+        <div class="resume-link-container">
+            <a href="your-resume.pdf" class="resume-link" target="_blank">Resume</a>
         </div>
-        <a href="your-resume.pdf" class="resume-link">Resume</a>
     </div>
 </section>
+
+
     
 
-    <!-- Skills Section -->
-<section id="skills">
-    <div class="skills-scroller">
-        <ul class="skills-content">
-            <!-- List your skills here -->
-            <li class="skill">HTML</li>
-            <li class="skill">CSS</li>
-            <li class="skill">JavaScript</li>
-            <li class="skill">React</li>
-            <li class="skill">Node.js</li>
-            <li class="skill">Python</li>
-            <li class="skill">SQL</li>
-            <li class="skill">Troubleshooting</li>
-            <li class="skill">Firewalls</li>
-            <li class="skill">Cisco</li>
-            <li class="skill">C++</li>
-            <li class="skill">Scripting</li>
-            <li class="skill">Windows</li>
-            <li class="skill">Linux</li>
-            <li class="skill">MacOS</li>
-        </ul>
-    </div>
-
-    <div class="fade-overlay fade-right"></div>
-    <div class="fade-overlay fade-left"></div>
+  <!-- Skills Section (Attached to About Me) -->
+  <div class="skills-scroller">
+    <ul class="skills-content">
+        <li class="skill">HTML</li>
+        <li class="skill">CSS</li>
+        <li class="skill">JavaScript</li>
+        <li class="skill">React</li>
+        <li class="skill">Node.js</li>
+        <li class="skill">Python</li>
+        <li class="skill">SQL</li>
+        <li class="skill">Troubleshooting</li>
+        <li class="skill">Firewalls</li>
+        <li class="skill">Cisco</li>
+        <li class="skill">C++</li>
+        <li class="skill">Scripting</li>
+        <li class="skill">Windows</li>
+        <li class="skill">Linux</li>
+        <li class="skill">MacOS</li>
+    </ul>
+</div>
 </section>
 
 
@@ -115,67 +113,68 @@
     </div>
 </section>
 
-        <!-- Certifications Section -->
-        <section id="certifications" data-aos="fade-up">
-            <h2>Certifications</h2>
-            <ul>
-                <li>CompTIA A+ (In Progress)</li>
-                <li>CompTIA Network+ (In Progress)</li>
-                <li>CompTIA Security+ (In Progress)</li>
-            </ul>
-        </section>
-
+<!-- Certifications Section -->
+<section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+        <li>CompTIA A+ </li>
+        <li>CompTIA Network+ (In Progress)</li>
+        <li>CompTIA Security+ (In Progress)</li>
+    </ul>
+</section>
 
 <!-- Daily IT Tip Section -->
-<section id="daily-tip" data-aos="fade-up">
+<section id="daily-tip">
     <h2>Daily IT Tip</h2>
     <p id="tip-text">Loading...</p>
 </section>
-</main>
-    <div class="tip-container">
-    <button class="new-tip-btn">New Tip</button>
+
+<!-- New Tip Button -->
+<div class="tip-container">
+    <button id="new-tip">New Tip</button>
 </div>
 
-<script src="script.js"></script>
-</body>
-</html>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Send Me a Message!</h2>
-        <form id="contact-form">
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
-            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+<section id="contact">
+    <h2>Send me a message!</h2>
+    <p>Have any questions? Dont spam me please.</p>
+
+    <!-- Contact Form -->
+<div class="contact-container">
+    <form>
+        <div class="input-container">
+            <i class="fas fa-user"></i>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="input-container">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-container">
+            <i class="fas fa-comment"></i>
+            <textarea id="message" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button type="submit" class="send-btn">Send</button>
+    </form>
+</div>
+
+
+    <!-- Social Links -->
+    <div class="social-links">
+        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+</section>
 
     <!-- JavaScript Files -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init();
-        
-        particlesJS("particles-js", {
-            particles: {
-                number: { value: 100, density: { enable: true, value_area: 800 } },
-                color: { value: "#ffffff" },
-                shape: { type: "circle" },
-                opacity: { value: 0.5 },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
-                move: { enable: true, speed: 3 }
-            },
-            interactivity: {
-                events: {
-                    onhover: { enable: true, mode: "repulse" },
-                    onclick: { enable: true, mode: "push" }
-                }
-            },
-            retina_detect: true
-        });
-    </script>
-    <script src="script.js"></script>
+<!-- JavaScript Files -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="script.js"></script> <!-- Keep custom scripts separate -->
+
 </body>
 </html>
