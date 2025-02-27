@@ -36,30 +36,51 @@
 
 
 
-   <!-- About Me Section -->
-<section id="about" class="about-container">
-    <img src="Steven.png" alt="Steven">
-    
-    <div class="about-text">
-        <h2 class="about-heading">About Me</h2>
-        <p>I'm an aspiring Network and Security Specialist with a passion for problem-solving, cybersecurity, and networking.</p>
-        <p>I graduated from Humber College with an Advanced Diploma in Computer Engineering and have hands-on experience troubleshooting IT issues, configuring networks, and managing security vulnerabilities.</p>
-        <p>Currently, I'm working toward earning my CompTIA A+, Network+, and Security+ certifications. My experience includes building and deploying a smart parking lot system, performing network security analysis, and working with firewalls, ticketing systems, and dynamic routing protocols.</p>
-        <p>Outside of tech, I value time with my family and friends. I also have a passion for cars, often working on them with my dad—though, let’s be real, it's mostly me getting yelled at for holding the flashlight wrong!</p>
-        
-        <!-- FIXED Resume Button (Now correctly below the last paragraph) -->
-        <div class="resume-link-container">
-            <a href="your-resume.pdf" class="resume-link" target="_blank">Resume</a>
+<!-- About Me + Skills Section (Now Wrapped Together in One White Background) -->
+<section class="about-section">
+    <div class="about-content">
+        <div class="about-container">
+            <!-- Profile Image -->
+            <div class="profile">
+                <img src="Steven.png" alt="Steven's Profile Picture" />
+            </div>
+
+            <!-- About Text -->
+            <div class="about-text">
+                <h2 class="about-heading">About Me</h2>
+                <p>I'm an aspiring <strong>Network and Security Specialist</strong> with a passion for <strong>problem-solving</strong>, <strong>cybersecurity</strong>, and <strong>networking</strong>.</p>
+                <p>I graduated from Humber College with an Advanced Diploma in <strong>Computer Engineering</strong> and have hands-on experience troubleshooting IT issues, configuring networks, and managing security vulnerabilities.</p>
+                <p>Currently, I'm working toward earning my <strong>CompTIA A+</strong>, <strong>Network+</strong>, and <strong>Security+</strong> certifications. My experience includes building and deploying a smart parking lot system, performing network security analysis, and working with <strong>firewalls</strong>, <strong>ticketing systems</strong>, and <strong>dynamic routing protocols</strong>.</p>
+                <p>Outside of tech, I value time with my family and friends. I also have a passion for cars, often working on them with my dad — though let’s be real, it's mostly me getting yelled at for holding the flashlight wrong!</p>
+
+                <!-- Resume Button -->
+                <div class="resume-link-container">
+                    <a href="resume.pdf" class="resume-link" target="_blank">Resume</a>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
 
 
-    
-
-  <!-- Skills Section (Attached to About Me) -->
-  <div class="skills-scroller">
+<!-- Skills Section (Attached to About Me) -->
+<div class="skills-scroller">
+    <div class="skills-fade skills-fade-left"></div> <!-- Left Fade -->
     <ul class="skills-content">
+        <li class="skill">HTML</li>
+        <li class="skill">CSS</li>
+        <li class="skill">JavaScript</li>
+        <li class="skill">React</li>
+        <li class="skill">Node.js</li>
+        <li class="skill">Python</li>
+        <li class="skill">SQL</li>
+        <li class="skill">Troubleshooting</li>
+        <li class="skill">Firewalls</li>
+        <li class="skill">Cisco</li>
+        <li class="skill">C++</li>
+        <li class="skill">Scripting</li>
+        <li class="skill">Windows</li>
+        <li class="skill">Linux</li>
+        <li class="skill">MacOS</li>
+        <!-- Duplicate for infinite scroll -->
         <li class="skill">HTML</li>
         <li class="skill">CSS</li>
         <li class="skill">JavaScript</li>
@@ -77,41 +98,69 @@
         <li class="skill">MacOS</li>
     </ul>
 </div>
-</section>
 
 
-  <!-- Projects Section -->
-<section id="projects">
+
+<!-- Projects Section -->
+<section id="section-projects">
     <h2>Projects</h2>
-    <div class="project-container">
-        <div class="project">
-            <h3>Smart Parking Lot System</h3>
-            <a href="https://github.com/FarazAhmed7778/EcoRoutes" target="_blank">
-                <img src="GreenLight Logo.png" alt="GreenLight Innovations" class="logo">
-            </a>
-            <p><strong>Description:</strong> Built an IoT-based parking system with sensors and an Android Studio app for real-time parking availability.</p>
-            <p><strong>Technologies Used:</strong> Android Studio, Arduino, Git/Github, PCB Soldering, Python3, IoT Sensors, Embedded Systems.</p>
-        </div>
+    <div class="projects-container">
+        
+        <!-- Smart Parking Lot System (Right) -->
+        <article class="project-card right">
+            <img src="GreenLight Logo.png" alt="GreenLight Innovations" class="project-thumb">
+            <div class="project-content">
+                <h3 class="project-title">Smart Parking Lot System</h3>
+                <p class="project-tagline">
+                    Built an IoT-based parking system with sensors and an Android Studio app for real-time parking availability.
+                </p>
+                <p class="project-tech">
+                    <strong>Technologies Used:</strong> Android Studio, Arduino, Git/Github, PCB Soldering, Python3, IoT Sensors, Embedded Systems.
+                </p>
+                <p class="project-links">
+                    <a href="https://github.com/FarazAhmed7778/EcoRoutes" target="_blank" rel="noopener" class="project-link">GitHub</a>
+                </p>
+            </div>
+        </article>
 
-        <div class="project">
-            <h3>Website Creation</h3>
-            <a href="https://github.com/StevenLambrinos9063/Portfolio-Website" target="_blank">
-                <img src="my logo.png" alt="Steven's Logo" class="logo">
-            </a>
-            <p><strong>Description:</strong> I am building a website from scratch, it is my portfolio. I don't have much to add at the moment, but I will be adding to this for a long time to come.</p>
-            <p><strong>Technologies Used:</strong> VS Code, HTML, CSS, Java, Git, GitHub, Porkbun.</p>
-        </div>
+        <!-- Portfolio Website (Left) -->
+        <article class="project-card left">
+            <img src="my logo.png" alt="Steven's Logo" class="project-thumb">
+            <div class="project-content">
+                <h3 class="project-title">Portfolio Website</h3>
+                <p class="project-tagline">
+                    Building my personal portfolio website from scratch. This will evolve over time as I continue to develop it.
+                </p>
+                <p class="project-tech">
+                    <strong>Technologies Used:</strong> VS Code, HTML, CSS, Java, Git, GitHub, Porkbun.
+                </p>
+                <p class="project-links">
+                    <a href="https://github.com/StevenLambrinos9063/Portfolio-Website" target="_blank" rel="noopener" class="project-link">GitHub</a>
+                </p>
+            </div>
+        </article>
 
-        <div class="project">
-            <h3>Project 3</h3>
-            <a href="https://github.com/Project3" target="_blank">
-                <img src="image3.png" alt="Project 3" class="logo">
-            </a>
-            <p><strong>Description:</strong> Description for project 3.</p>
-            <p><strong>Technologies Used:</strong> Technologies for project 3.</p>
-        </div>
+        <!-- Project 3 (Right) -->
+        <article class="project-card right">
+            <img src="image3.png" alt="Project 3" class="project-thumb">
+            <div class="project-content">
+                <h3 class="project-title">Project 3</h3>
+                <p class="project-tagline">
+                    Description for project 3.
+                </p>
+                <p class="project-tech">
+                    <strong>Technologies Used:</strong> Technologies for project 3.
+                </p>
+                <p class="project-links">
+                    <a href="https://github.com/Project3" target="_blank" rel="noopener" class="project-link">GitHub</a>
+                </p>
+            </div>
+        </article>
+
     </div>
 </section>
+
+
 
 <!-- Certifications Section -->
 <section id="certifications">

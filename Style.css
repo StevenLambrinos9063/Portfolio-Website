@@ -162,153 +162,286 @@ body {
     transform: translateY(-3px); /* Moves up slightly */
 }
   
-/* ---------- ABOUT ME SECTION (Original Layout) ---------- */
-.about-container {
+/* ---------- Full-Width White Background ONLY for About Me + Skills Section ---------- */
+.about-section {
+    width: 100%;
+    background: white; /* White background only for About Me & Skills */
+    padding: 80px 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background: #f8f9fa;
-    width: 90%;
-    padding: 80px 5%;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    margin: auto;
 }
 
-/* About Me Image */
-.about-container img {
-    width: 300px;
+/* Centering About Me Content */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    width: 90%;
+    text-align: left; /* Keeps text aligned properly */
+    margin: 0 auto; /* Moves entire section to center */
+}
+
+/* Profile Image */
+.profile img {
+    width: 250px;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
     flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-    margin-right: 40px;
+    margin-right: 30px;
 }
 
 /* About Me Text */
 .about-text {
     flex: 1;
-    max-width: 800px; /* Keeps text from stretching too wide */
-    font-size: 20px;
+    font-size: 18px;
     color: #333;
     font-weight: 500;
-    line-height: 1.5; /* Improves paragraph readability */
-    z-index: 2;
-    text-align: left;
-    margin-right: middle; /* Ensures text stays structured next to the image */
+    line-height: 1.6;
 }
 
-/* ---------- INFINITE SCROLLING SKILLS BAR ---------- */
-.skills-scroller {
-    width: 100%;
-    overflow: hidden;
-    background: #f8f9fa; /* Matches About Me */
-    padding: 15px 0;
-    position: relative;
+/* Heading */
+.about-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
-/* Container for the scrolling text */
-.skills-content {
-    display: flex;
-    gap: 20px;
-    white-space: nowrap;
-    animation: scrollSkills 10s linear infinite;
-    width: max-content;
-}
-
+/* Resume Button */
 .resume-link-container {
-    width: 100%;
-    margin-top: 20px; /* Space between last paragraph and button */
-    display: flex;
-    align-items: flex-start; /* Align button with text */
+    margin-top: 20px;
 }
-
-/* Resume Link */
 .resume-link {
-    padding: 12px 24px;
     background: #89CFF0;
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 12px 24px;
     border-radius: 6px;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease;
     font-size: 18px;
+    display: inline-block;
+    text-align: center;
 }
-
 .resume-link:hover {
-    background: #89CFF0;
+    background: #5aaddf;
     transform: scale(1.05);
 }
 
-/* Individual Skill Box */
-.skill {
-    background: #222;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 6px;
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: bold;
+/* ---------- Skills Scroller (Fully Attached to White Background) ---------- */
+.skills-scroller {
+    width: 100%;
+    overflow: hidden;
+    background: white;
+    padding: 15px 0;
+    position: relative;
+    margin-top: 30px; /* Space between About Me and Skills */
+    display: flex;
+    justify-content: center;
+}
+
+/* Continuous Scrolling Animation */
+.skills-content {
+    display: flex;
+    white-space: nowrap;
+    animation: scrollSkills 20s linear infinite;
+    width: max-content;
+}
+.skills-content .skill {
     display: inline-block;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 8px 12px;
+    font-weight: bold;
+    background: #222;
+    color: white;
+    border-radius: 5px;
+    margin: 0 5px;
 }
 
 /* Infinite Scroll Animation */
 @keyframes scrollSkills {
-    0% {
-        transform: translateX(100%);
+    from {
+        transform: translateX(0);
     }
-    100% {
+    to {
         transform: translateX(-100%);
     }
 }
 
+/* Fade Effect on Skills Bar */
+.skills-fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    pointer-events: none;
+    z-index: 1;
+}
+.skills-fade-left {
+    left: 0;
+    background: linear-gradient(to right, white 0%, transparent 100%);
+}
+.skills-fade-right {
+    right: 0;
+    background: linear-gradient(to left, white 0%, transparent 100%);
+}
+
+/* ---------- Responsive Fixes (Mobile) ---------- */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .profile img {
+        width: 180px;
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .resume-link-container {
+        display: flex;
+        justify-content: center;
+    }
+}
 
 
 /* Projects Section */
-.projects {
+#section-projects {
     text-align: center;
     padding: 60px 20px;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
 }
 
-.projects h2 {
+#section-projects h2 {
     font-size: 2.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
-.project-container {
-    display: flex; /* Align items in a row */
-    justify-content: space-between; /* Space items evenly */
-    gap: 20px; /* Small space between items */
+/* Project Container */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px; /* Space between projects */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.project {
-    width: 300px; /* Fixed width for each project */
+/* Project Card */
+.project-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: #1a1a1a;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s;
+    max-width: 900px;
+    gap: 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
 }
 
-.project:hover {
+/* Hover Effect */
+.project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
 }
 
-.project img {
-    width: 100%; /* Ensure image fits within the project box */
+/* Left Alignment (Image Left, Text Right) */
+.project-card.left {
+    flex-direction: row;
+    text-align: left;
+}
+
+/* Right Alignment (Image Right, Text Left) */
+.project-card.right {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+/* Project Image */
+.project-thumb {
+    width: 45%;
+    max-width: 400px;
+    height: auto;
     border-radius: 10px;
-    margin-bottom: 15px;
 }
 
-.project h3 {
+/* Project Content */
+.project-content {
+    width: 50%;
+}
+
+/* Project Title */
+.project-title {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
+
+/* Project Description */
+.project-tagline, .project-tech {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+/* Project Links */
+.project-links {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.project-links a {
+    color: #4db8ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.project-links a:hover {
+    color: #80d4ff;
+    text-decoration: underline;
+}
+
+/* Responsive Design (Mobile Friendly) */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .project-card.left,
+    .project-card.right {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-thumb {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .project-content {
+        width: 100%;
+    }
+}
+
+
+.project-thumb {
+    width: 80%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+
 
 /* Ensure certifications and daily IT tip are displayed */
 #certifications, #daily-tip {
